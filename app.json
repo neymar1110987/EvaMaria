@@ -16,8 +16,8 @@
       "inline"
     ],
     "website": "https://github.com/EvamariaTG/EvaMaria",
-    "repository": "https://github.com/EvamariaTG/EvaMaria",
-    "env": {
+    "repository": "https://github.com/neymar1110987/EvaMaria",
+    "env":
         "BOT_TOKEN": {
             "description": "Your bot token.",
             "required": true
