@@ -13,7 +13,7 @@ logger.setLevel(logging.ERROR)
 @Client.on_message(filters.command('id'))
 async def showid(client, message):
     chat_type = message.chat.type
-    if chat_type == "private":
+    if chat_type == "public":
         user_id = message.chat.id
         first = message.from_user.first_name
         last = message.from_user.last_name or ""
