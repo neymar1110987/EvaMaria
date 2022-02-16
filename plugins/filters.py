@@ -17,11 +17,11 @@ from info import ADMINS
 async def addfilter(client, message):
     userid = message.from_user.id if message.from_user else None
     if not userid:
-        return await message.reply(f"You are anonymous admin. Use /connect {message.chat.id} in PM")
+        return await message.reply(f"You are anonymous admin. Use /connect {message.chat.id}")
     chat_type = message.chat.type
     args = message.text.html.split(None, 1)
 
-    if chat_type == "private":
+    if chat_type == "public":
         grpid = await active_connection(str(userid))
         if grpid is not None:
             grp_id = grpid
@@ -122,8 +122,8 @@ async def get_all(client, message):
     chat_type = message.chat.type
     userid = message.from_user.id if message.from_user else None
     if not userid:
-        return await message.reply(f"You are anonymous admin. Use /connect {message.chat.id} in PM")
-    if chat_type == "private":
+        return await message.reply(f"You are anonymous admin. Use /connect {message.chat.id}")
+    if chat_type == "public":
         userid = message.from_user.id
         grpid = await active_connection(str(userid))
         if grpid is not None:
@@ -184,10 +184,10 @@ async def get_all(client, message):
 async def deletefilter(client, message):
     userid = message.from_user.id if message.from_user else None
     if not userid:
-        return await message.reply(f"You are anonymous admin. Use /connect {message.chat.id} in PM")
+        return await message.reply(f"You are anonymous admin. Use /connect {message.chat.id}")
     chat_type = message.chat.type
 
-    if chat_type == "private":
+    if chat_type == "public":
         grpid  = await active_connection(str(userid))
         if grpid is not None:
             grp_id = grpid
@@ -235,10 +235,10 @@ async def deletefilter(client, message):
 async def delallconfirm(client, message):
     userid = message.from_user.id if message.from_user else None
     if not userid:
-        return await message.reply(f"You are anonymous admin. Use /connect {message.chat.id} in PM")
+        return await message.reply(f"You are anonymous admin. Use /connect {message.chat.id}")
     chat_type = message.chat.type
 
-    if chat_type == "private":
+    if chat_type == "public":
         grpid  = await active_connection(str(userid))
         if grpid is not None:
             grp_id = grpid
