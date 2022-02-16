@@ -53,7 +53,7 @@ class script(object):
  I'll add all the files in that channel to my db."""
     CONNECTION_TXT = """Help: <b>Connections</b>
 
-- Used to connect bot to PM for managing filters 
+- Used to connect bot for managing filters 
 - it helps to avoid spamming in groups.
 
 <b>NOTE:</b>
