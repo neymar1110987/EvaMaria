@@ -15,7 +15,7 @@ async def addconnection(client, message):
         return await message.reply(f"You are anonymous admin. Use /connect {message.chat.id} in PM")
     chat_type = message.chat.type
 
-    if chat_type == "private":
+    if chat_type == "public":
         try:
             cmd, group_id = message.text.split(" ", 1)
         except:
@@ -86,7 +86,7 @@ async def deleteconnection(client, message):
         return await message.reply(f"You are anonymous admin. Use /connect {message.chat.id} in PM")
     chat_type = message.chat.type
 
-    if chat_type == "private":
+    if chat_type == "public":
         await message.reply_text("Run /connections to view or disconnect from groups!", quote=True)
 
     elif chat_type in ["group", "supergroup"]:
